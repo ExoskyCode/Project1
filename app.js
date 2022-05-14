@@ -2,6 +2,7 @@ const btnOpen = document.querySelector('.more');
 const btnClose = document.querySelector('.close')
 const modal = document.querySelector('.produits');
 const headerBgModal = document.querySelector('header')
+const modalOff = document.querySelector('#contact')
 
 let toggle = false;
 
@@ -14,13 +15,16 @@ btnOpen.addEventListener('click', () => {
             modal.style.opacity = 1;
         }, 30);
         headerBgModal.style.opacity = 0;
+        modalOff.style.opacity = 0;
     }
     else if(toggle === true){
+        modalOff.style.opacity = 1;
         modal.style.opacity = 0;
+        modalOff.style.opacity = 1;
         headerBgModal.style.opacity = 1;
-        
         setTimeout(() => {
            modal.style.display = "none" 
+           modalOff.style.opacity = 1;
         }, 30);
     }
 })
@@ -36,6 +40,7 @@ btnClose.addEventListener('click', () => {
     }
     else if(toggle === true){
         modal.style.opacity = 0;
+        modalOff.style.opacity = 1;
         headerBgModal.style.opacity = 1;
         setTimeout(() => {
             modal.style.display = "none" 
